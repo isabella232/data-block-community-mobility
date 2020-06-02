@@ -4,7 +4,7 @@
   elements:
   - title: Workplace Time vs. Baseline
     name: Workplace Time vs Baseline
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_map
     fields: [mobility.workplaces_dynamic, mobility.country_region_code]
@@ -48,7 +48,7 @@
     height: 9
   - title: Residential Time vs. Baseline
     name: Residential Time vs Baseline
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_map
     fields: [mobility.residential_dynamic, mobility.country_region_code]
@@ -92,7 +92,7 @@
     height: 9
   - title: Grocery and Pharmacy
     name: Grocery and Pharmacy
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.mobility_date, mobility.grocery_and_pharmacy_dynamic, mobility.country_region_code]
@@ -176,7 +176,7 @@
     height: 7
   - title: Parks
     name: Parks
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.mobility_date, mobility.parks_dynamic, mobility.country_region_code]
@@ -310,7 +310,7 @@
     height: 7
   - title: Residential
     name: Residential
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.mobility_date, mobility.residential_dynamic, mobility.country_region_code]
@@ -447,7 +447,7 @@
     height: 7
   - title: Retail and Recreation
     name: Retail and Recreation
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.retail_and_recreation_dynamic, mobility.mobility_date, mobility.country_region_code]
@@ -601,7 +601,7 @@
     height: 7
   - title: Transit Stations
     name: Transit Stations
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.mobility_date, mobility.transit_stations_dynamic, mobility.country_region_code]
@@ -745,7 +745,7 @@
     height: 7
   - title: Workplaces
     name: Workplaces
-    model: covid
+    model: mobility
     explore: mobility
     type: looker_line
     fields: [mobility.workplaces_dynamic, mobility.mobility_date, mobility.country_region_code]

@@ -13,7 +13,7 @@ view: mobility_data {
 
 view: mobility_data_core {
   derived_table: {
-    datagroup_trigger: covid_data
+    datagroup_trigger: mobility_data
     sql:  SELECT
             m.*
             , AVG(grocery_and_pharmacy_percent_change_from_baseline) OVER (

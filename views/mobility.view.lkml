@@ -90,6 +90,7 @@ view: mobility_data_core {
     }
 
     dimension: country_region {
+      description: "The country/region in which changes are measured relative to the baseline"
       type: string
       sql: ${TABLE}.country_region ;;
       label: "1 - Country (Full name)"
@@ -98,6 +99,7 @@ view: mobility_data_core {
     }
 
     dimension: country_region_code {
+      description: "The country/region in which changes are measured relative to the baseline"
       type: string
       label: "1 - Country (ISO Code)"
       sql: ${TABLE}.country_region_code;;
@@ -106,6 +108,7 @@ view: mobility_data_core {
     }
 
     dimension: sub_region_1 {
+      description: "First geographic sub-region in which the data is aggregated. This varies by country/region to ensure privacy and public health value in consultation with local public health authorities"
       label: "2 - State, Province, or Similar"
       type: string
       sql: ${TABLE}.sub_region_1 ;;
@@ -117,6 +120,7 @@ view: mobility_data_core {
     }
 
     dimension: sub_region_2 {
+      description: "First geographic sub-region in which the data is aggregated. This varies by country/region to ensure privacy and public health value in consultation with local public health authorities"
       type: string
       label: "3 - County Name (US Only)"
 #       hidden: yes
@@ -140,6 +144,7 @@ view: mobility_data_core {
     }
 
     dimension_group: mobility {
+      description: "Mobility trends for places of residence."
       type: time
       label: "Measurement"
       timeframes: [
@@ -210,6 +215,7 @@ view: mobility_data_core {
 # Dividing these by 100 so they are stored in their base form as decimals, rather than percentages
 
     dimension: grocery_and_pharmacy_pcfb {
+      description: "Mobility trends for places like grocery markets, food warehouses, farmers markets, specialty food shops, drug stores, and pharmacies."
       hidden: yes
       type: number
       sql: ${TABLE}.grocery_and_pharmacy_percent_change_from_baseline/100 ;;
@@ -234,6 +240,7 @@ view: mobility_data_core {
     }
 
     dimension: residential_pcfb {
+      description: "Mobility trends for places of residence."
       hidden: yes
       type: number
       sql: ${TABLE}.residential_percent_change_from_baseline/100 ;;
@@ -246,6 +253,7 @@ view: mobility_data_core {
     }
 
     dimension: retail_and_recreation_pcfb {
+      description: "Mobility trends for places like grocery markets, food warehouses, farmers markets, specialty food shops, drug stores, and pharmacies."
       hidden: yes
       type: number
       sql: ${TABLE}.retail_and_recreation_percent_change_from_baseline/100 ;;
@@ -258,6 +266,7 @@ view: mobility_data_core {
     }
 
     dimension: transit_stations_pcfb {
+      description: "Mobility trends for places like public transport hubs such as subway, bus, and train stations."
       hidden: yes
       type: number
       sql: ${TABLE}.transit_stations_percent_change_from_baseline/100 ;;
@@ -270,6 +279,7 @@ view: mobility_data_core {
     }
 
     dimension: workplaces_pcfb {
+      description: "Mobility trends for places like public transport hubs such as subway, bus, and train stations."
       hidden: yes
       type: number
       sql: ${TABLE}.workplaces_percent_change_from_baseline/100 ;;

@@ -22,6 +22,7 @@ explore: mobility {
 explore: mobility_core {
   from: mobility_data
   extension: required
+  group_label: "Community Mobility Reports"
   description: "This Explore uses data from Google's COVID-19 Community Mobility Reports. Full information about these are available at: https://www.google.com/covid19/mobility/"
   sql_always_where: ${geo_level_output} = ${geo_level};;
   # always_filter: {
@@ -38,19 +39,17 @@ explore: mobility_core {
 
 ############ Caching Logic ############
 
-persist_with: covid_data
+persist_with: mobility_data
 
 ### PDT Timeframes
 
-datagroup: covid_data {
+datagroup: mobility_data {
   max_cache_age: "12 hours"
   sql_trigger:
     SELECT min(max_date) as max_date
     FROM
     (
-      SELECT max(cast(date as date)) as max_date FROM `bigquery-public-data.covid19_nyt.us_counties`
-      UNION ALL
-      SELECT max(cast(date as date)) as max_date FROM `bigquery-public-data.covid19_jhu_csse.summary`
+      SELECT max(cast(date as date)) as max_date FROM `bigquery-public-data.covid19_google_mobility.mobility_report`
     ) a
   ;;
 }
